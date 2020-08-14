@@ -13,48 +13,55 @@ var questions = [
     {
         question: "Inside which HTML element do we put the Javascript file?",
         answers: ["<script>", "<scripting>", "<js>", "<javascript>"],
-        correct: 0;
+        correct: 0
     }, {
         question: "Which is the correct place to insert a Javascript?",
         answers: ["<head> section", "<body> section", "<head> or <body> section", "<title> section"],
-        correct: 2;
+        correct: 2
     }, {
 
         question: "What is the correct syntax for refferring to an external script?",
         answers: ["<script src = \"xxx.js\">", "<script name = \"xxx.js\">", "<script href = \"xxx.js\">", "<script = \"xxx.js\">"],
-        correct: 0;
+        correct: 0
     },
     {
         question: "How do you write \"Hello World\" in an alert box?",
         answers: ["msg(\"Hello World\");", "msgBox(\"Hello World\");", "alertBox(\"Hello World\");", "alert(\"Hello World\");"],
-        correct: 3;
+        correct: 3
     },
     {
 
         question: "How do you create a function in Javascript?",
         answers: ["function = myFunction()", "function:myFunction()", "function myFunction()", "function myFunction[]"],
-        correct: 2;
-    }
-
+        correct: 2
+    },
+    {
         question: "How do you call a function named myFunction?",
         answers: ["myFunction()", "call myFunction()", "call function myFunction()", "cb myFunction()"],
-        correct: 0;
+        correct: 0
+    },
+    {
+    question: "How to write an IF statement in Javascript?",
+    answers: ["if i = 5 then", "if i = 5", "if i == 5 then", "if (i == 5)"],
+    correct: 3
+    },
+    {
 
-    question("How to write an IF statement in Javascript?",
-    ["if i = 5 then", "if i = 5", "if i == 5 then", "if (i == 5)"],
-    "if (i == 5)"),
+    question: "How does a WHILE loop start?",
+    answers: ["while i = 1 to 10", "while (i <= 10; i++)", "while (i <= 10)", "while i < 10"],
+    correct: 2
+    },
+    {
 
-    question("How does a WHILE loop start?",
-        ["while i = 1 to 10", "while (i <= 10; i++)", "while (i <= 10)", "while i < 10"],
-        "while (i <= 10)"),
+    question: "How does a FOR loop start?",
+    answers: ["for i = 1 to 5", "for (i = 0; i <= 5)", "for (var i = 0; i <= 5; i++)", "for (i <=5; i++)"],
+    correct: 2
+    },
+    {
 
-    question("How does a FOR loop start?",
-        ["for i = 1 to 5", "for (i = 0; i <= 5)", "for (var i = 0; i <= 5; i++)", "for (i <=5; i++)"],
-        "for (var i = 0; i <= 5, i++)"),
-
-    question("How do you add a comment in Javascript?",
-        ["<!--comment-->", "//comment", "\'comment\'", "\"comment\""],
-        "//comment"),
+    question: "How do you add a comment in Javascript?",
+    answers: ["<!--comment-->", "//comment", "\'comment\'", "\"comment\""],
+    correct: 1
     }
 
 ];
