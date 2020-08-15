@@ -72,7 +72,7 @@ var questionContainerElements = document.getElementById("question-container");
 var timerEl = document.getElementById('timer')
 var question = document.getElementById('question')
 var answerButtons = document.getElementById('answer-buttons')
-var timer = 90;
+var timer = 60;
 var qIndex = 0;
 var timerId;
 var score = 0;
