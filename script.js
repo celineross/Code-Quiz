@@ -85,28 +85,34 @@ function startGame() {
     startButton.classList.add("hide");
     questionContainerElements.classList.remove("hide");
 
-    callTimer()
-    displayQuestion()
+    callTimer();
+    displayQuestion();
 }
 
 function selectAnswer() {
-    console.log(this.textContent)
+    //console.log(this.textContent);
+    var correctAnswerIdx = questions[qIndex].correct;
 
-    qIndex++;
-    displayQuestion()
+    if ($(this).text() === questions[qIndex].answers) {
+        alert("Correct.")
+        qIndex++;
+        displayQuestion();
+    } else {
+        alert("Incorrect.")
+    }
 }
 
 function displayQuestion() {
-    answerButtons.innerHTML = ""
+    answerButtons.innerHTML = "";
 
-    var q = questions[qIndex]
-    question.textContent = q.question
+    var q = questions[qIndex];
+    question.textContent = q.question;
 
     for (var i = 0; i < q.answers.length; i++) {
-        var button = document.createElement('button')
-        button.textContent = q.answers[i]
-        button.addEventListener("click", selectAnswer)
-        answerButtons.appendChild(button)
+        var button = document.createElement('button');
+        button.textContent = q.answers[i];
+        button.addEventListener("click", selectAnswer);
+        answerButtons.appendChild(button);
        
 
     }
