@@ -14,11 +14,13 @@ var questions = [
         question: "Inside which HTML element do we put the Javascript file?",
         answers: ["<script>", "<scripting>", "<js>", "<javascript>"],
         correct: 0
-    }, {
+    }, 
+    {
         question: "Which is the correct place to insert a Javascript?",
         answers: ["<head> section", "<body> section", "<head> or <body> section", "<title> section"],
         correct: 2
-    }, {
+    }, 
+    {
 
         question: "What is the correct syntax for refferring to an external script?",
         answers: ["<script src = \"xxx.js\">", "<script name = \"xxx.js\">", "<script href = \"xxx.js\">", "<script = \"xxx.js\">"],
@@ -41,39 +43,39 @@ var questions = [
         correct: 0
     },
     {
-    question: "How to write an IF statement in Javascript?",
-    answers: ["if i = 5 then", "if i = 5", "if i == 5 then", "if (i == 5)"],
-    correct: 3
+        question: "How to write an IF statement in Javascript?",
+        answers: ["if i = 5 then", "if i = 5", "if i == 5 then", "if (i == 5)"],
+        correct: 3
+    },
+    {
+        question: "How does a WHILE loop start?",
+        answers: ["while i = 1 to 10", "while (i <= 10; i++)", "while (i <= 10)", "while i < 10"],
+        correct: 2
     },
     {
 
-    question: "How does a WHILE loop start?",
-    answers: ["while i = 1 to 10", "while (i <= 10; i++)", "while (i <= 10)", "while i < 10"],
-    correct: 2
+        question: "How does a FOR loop start?",
+        answers: ["for i = 1 to 5", "for (i = 0; i <= 5)", "for (var i = 0; i <= 5; i++)", "for (i <=5; i++)"],
+        correct: 2
     },
     {
 
-    question: "How does a FOR loop start?",
-    answers: ["for i = 1 to 5", "for (i = 0; i <= 5)", "for (var i = 0; i <= 5; i++)", "for (i <=5; i++)"],
-    correct: 2
-    },
-    {
-
-    question: "How do you add a comment in Javascript?",
-    answers: ["<!--comment-->", "//comment", "\'comment\'", "\"comment\""],
-    correct: 1
+        question: "How do you add a comment in Javascript?",
+        answers: ["<!--comment-->", "//comment", "\'comment\'", "\"comment\""],
+        correct: 1
     }
 
 ];
-//need to create timer
+
 var startButton = document.getElementById("start-btn");
 var questionContainerElements = document.getElementById("question-container");
 var timerEl = document.getElementById('timer')
 var question = document.getElementById('question')
 var answerButtons = document.getElementById('answer-buttons')
-var timer = 15;
+var timer = 90;
 var qIndex = 0;
 var timerId;
+var score = 0;
 
 startButton.addEventListener("click", startGame);
 
@@ -85,7 +87,6 @@ function startGame() {
 
     callTimer()
     displayQuestion()
-    //need to start timer as well
 }
 
 function selectAnswer() {
@@ -106,7 +107,10 @@ function displayQuestion() {
         button.textContent = q.answers[i]
         button.addEventListener("click", selectAnswer)
         answerButtons.appendChild(button)
+       
+
     }
+ 
 }
 
 function callTimer() {
@@ -117,7 +121,8 @@ function callTimer() {
         timerEl.textContent = timer;
 
         if (timer === 0) {
-            clearInterval(timerId)
+            clearInterval(timerId);
+            alert("You ran out of time!")
         }
     }, 1 * 1000)
 }
