@@ -9,6 +9,8 @@
 //work from the indexes of the answer choices to determine the correct one
 //if index (num) is true then move to next question and add 10 points to score
 //else move to next question and remove 10 seconds from the timer
+
+//array of questions with index as the identifier of correct answer
 var questions = [
     {
         question: "Inside which HTML element do we put the Javascript file?",
@@ -66,7 +68,7 @@ var questions = [
     }
 
 ];
-
+//list of variables
 var startButton = document.getElementById("start-btn");
 var questionContainerElements = document.getElementById("question-container");
 var timerEl = document.getElementById('timer')
@@ -77,8 +79,10 @@ var qIndex = 0;
 var timerId;
 var score = 0;
 
+//on click for start button
 startButton.addEventListener("click", startGame);
 
+//function to start game, begin timer, and display first question
 function startGame() {
     timerEl.textContent = timer;
 
@@ -89,8 +93,9 @@ function startGame() {
     displayQuestion();
 }
 
+//function to determine if answer is correct or not
 function selectAnswer() {
-    //console.log(this.textContent);
+    console.log(this.textContent);
     var correctAnswerIdx = questions[qIndex].correct;
 
     if ($(this).text() === questions[qIndex].answers) {
@@ -102,12 +107,14 @@ function selectAnswer() {
     }
 }
 
+//function for displaying each question
 function displayQuestion() {
     answerButtons.innerHTML = "";
 
     var q = questions[qIndex];
     question.textContent = q.question;
 
+    //loop to go through each question
     for (var i = 0; i < q.answers.length; i++) {
         var button = document.createElement('button');
         button.textContent = q.answers[i];
@@ -119,7 +126,9 @@ function displayQuestion() {
  
 }
 
+//sets up timer
 function callTimer() {
+    //initial clear to avoid secondary timers
     clearInterval(timerId)
 
     timerId = setInterval(function () {
