@@ -11,4 +11,4 @@
 <img src = "screenshots/questions.png">
 <img src = "screenshots/timer.png">
 
-<a href = "celineross.github.io/Homework4CodeQuiz">
+<a href = "celineross.github.io/Homework4CodeQuiz">Link to functioning site</a>
