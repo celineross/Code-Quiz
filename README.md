@@ -9,4 +9,6 @@
 
 <img src = "screenshots/start.png">
 <img src = "screenshots/questions.png">
-<img src = "timer.png">
+<img src = "screenshots/timer.png">
+
+<a href = "celineross.github.io/Homework4CodeQuiz">
